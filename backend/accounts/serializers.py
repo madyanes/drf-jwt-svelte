@@ -137,6 +137,7 @@ class LogoutSerializer(serializers.Serializer[User]):
     def validate(self, attrs): # type: ignore
         """Validate token."""
         self.token = attrs['refresh']
+        return attrs
 
     def save(self, **kwargs): # type: ignore
         """Validate save blacklisted token."""
